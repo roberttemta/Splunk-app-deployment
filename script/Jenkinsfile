@@ -1,0 +1,28 @@
+
+pipeline{
+    agent any
+    
+    stages{
+        stage('init'){
+            steps{
+                sh 'terraform init -no-color'
+            }
+        }
+         stage('fmt'){
+            steps{
+                sh 'terraform fmt'
+            }
+        }
+        stage('validate'){
+            steps{
+                sh 'terraform validate -no-color'
+            }
+        }
+        stage('plan'){
+            steps{
+                sh 'terraform plan -no-color'
+            }
+        }
+    }
+       
+}
