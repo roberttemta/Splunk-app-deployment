@@ -13,3 +13,13 @@ terraform {
 
   }
 }
+
+/*
+terraform {
+  backend "local" {
+    path = "terraform.tfstate"
+  }
+}
+*/
+# To modify the backend, you need to provide the path to new backend as done above
+# Then run a terraform init -reconfigure, to reconfigure the backend.
